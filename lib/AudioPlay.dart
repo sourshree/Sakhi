@@ -93,11 +93,25 @@ class _AudioPlayState extends State<AudioPlay> {
   String currentSinger = "";
   String currentCoverUrl = "";
   String currentUrl = "";
+  Duration currentPosition = Duration.zero;
+  Duration totalDuration = Duration.zero;
 
   @override
   void initState() {
     super.initState();
     _audioPlayer = AudioPlayer();
+
+    _audioPlayer.onDurationChanged.listen((Duration duration) {
+      setState(() {
+        totalDuration = duration;
+      });
+    });
+
+    _audioPlayer.onPositionChanged.listen((Duration position) {
+      setState(() {
+        currentPosition = position;
+      });
+    });
   }
 
   void playMusic(
@@ -168,6 +182,15 @@ class _AudioPlayState extends State<AudioPlay> {
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
                 Text(currentSinger),
+                Slider(
+                  value: currentPosition.inSeconds.toDouble(),
+                  max: totalDuration.inSeconds.toDouble(),
+                  onChanged: (double value) {
+                    setState(() {
+                      _audioPlayer.seek(Duration(seconds: value.toInt()));
+                    });
+                  },
+                ),
                 IconButton(
                   icon: Icon(Icons.pause),
                   onPressed: pauseMusic,
