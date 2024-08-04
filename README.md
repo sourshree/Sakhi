@@ -10,10 +10,6 @@ Sakhi is a Flutter application designed to provide a seamless user experience. T
 - Offline support
 - Modular and maintainable codebase
 
-## Screenshots
-<!-- Add your screenshots here -->
-<!-- Example: ![Screenshot 1](path/to/screenshot1.png) -->
-
 ## Getting Started
 
 ### Prerequisites
@@ -40,4 +36,4 @@ Contributions are welcome! Please follow these steps to contribute:
 For any questions or suggestions, feel free to reach out:
 
 - Email: [shreetama.mohanta2021@vitstudent.ac.in](mailto:shreetama.mohanta2021@vitstudent.ac.in)
-- LinkedIn: [MyProfile]([https://www.linkedin.com/in/yourprofile/](https://www.linkedin.com/in/shreetama-mohanta-03059221b/))
+- LinkedIn: [MyProfile](https://www.linkedin.com/in/shreetama-mohanta-03059221b/)
